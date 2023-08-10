@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 Must-Watch Movies</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+        
+        li:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Top 5 Must-Watch Movies</h1>
+        <ul id="movieList"></ul>
+    </div>
+    <script>
+        const movies = [
+            {
+                title: "Harry Potter Series",
+                description: "Embark on a magical journey with Harry and his friends...",
+            },
+            {
+                title: "The Lord of the Rings Series",
+                description: "Dive into Middle-earth and join Frodo and his companions...",
+            },
+            {
+                title: "The Matrix Series",
+                description: "Buckle up for mind-bending action as Neo discovers the truth...",
+            },
+            {
+                title: "Fight Club",
+                description: "Enter a world of underground chaos and self-discovery...",
+            },
+            {
+                title: "The Dark Knight",
+                description: "Witness the rise of the legendary Caped Crusader as he battles the Joker...",
+            }
+        ];
+
+        const movieList = document.getElementById("movieList");
+
+        movies.forEach(movie => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <h2 class="movie-title">${movie.title}</h2>
+                <p>${movie.description}</p>
+            `;
+            movieList.appendChild(li);
+        });
+
+        const movieTitles = document.querySelectorAll(".movie-title");
+
+        movieTitles.forEach(title => {
+            title.addEventListener("click", () => {
+                // Add your custom action here
+                alert(`You clicked on "${title.textContent}"!`);
+            });
+        });
+    </script>
+</body>
+</html>
